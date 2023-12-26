@@ -4,7 +4,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Swiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
 
 import PlayPause from './PlayPause';
@@ -71,6 +71,25 @@ const TopPlay = () => {
             <p className="text-gray-300 text-base cursor-pointer">see more</p>
           </Link>
         </div>
+
+        <Swiper
+          slidePerView="auto"
+          spaceBetween={15}
+          freeMode
+          centeredSlides
+          centeredSlidesBounds
+          modules={[FreeMode]}
+          className="mt-4"
+        >
+          {topPlays?.map((song, i) => (
+            <SwiperSlide
+              key={song?.key}
+              style={{ with: '25%', height: 'auto' }}
+              className="shadow-lg rounded-full animate-slideright"
+            />
+          ))}
+
+        </Swiper>
       </div>
     </div>
   );
