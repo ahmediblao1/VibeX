@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HiOutlineMenu } from 'react-icons/hi';
 import { RiCloseLine } from 'react-icons/ri';
-import vlogo from '../assets/vlogo.png';
-import { logo } from '../assets';
+import xlogo from '../assets/xlogo.png';
 import { links } from '../assets/constants';
 
 const NavLinks = ({ handleClick }) => (
@@ -14,7 +13,7 @@ const NavLinks = ({ handleClick }) => (
         key={item.name}
         to={item.to}
         className="flex flex-row justify-start items-center my-8
-       text-sm font-medium text-gray-400 hover:text-cyan-100"
+       text-sm font-medium text-gray-200 hover:text-[#FCB404]"
         onClick={() => handleClick && handleClick()}
       >
         <item.icon className="w-6 h-6 mr-2" />
@@ -29,7 +28,7 @@ const Sidebar = () => {
   return (
     <>
       <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#043B1D]">
-        <img src={vlogo} alt="logo" className="w-full h-14 object-cover" />
+        <img src={xlogo} alt="logo" className="w-full h-14 object-cover" />
         <NavLinks />
       </div>
 
@@ -43,7 +42,7 @@ const Sidebar = () => {
        from-white/10 to-[#483d8b backdrop-blur-lg z-10 p-6 md:hidden
          smooth-transition ${mobileMenuOpen ? 'left-0' : 'left-full'}`}
       >
-        <img src={vlogo} alt="logo" />
+        <img src={xlogo} alt="logo" />
         <NavLinks handleClick={() => setmobileMenuOpen(false)} />
       </div>
     </>
