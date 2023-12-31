@@ -28,8 +28,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
     >
       <div className="relative w-full h-56 group">
 
-        <div className={`absolute inset-0 justify-center items-center
-       bg-black bg-opacity-50 group-hover:flex
+        <div className={`absolute inset-0 justify-center items-center bg-[#043B1D] bg-opacity-50 group-hover:flex
       ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'} `}
         >
           <PlayPause
@@ -48,7 +47,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
             {song.title}
           </Link>
         </p>
-        <p className="text-sm truncate text-gray-300 mt-1">
+        <p className="text-sm truncate text-gray-100 mt-1">
           <Link to={song.artists ? `/artists/${song?.artists[0]?.adamid}` : 'topartist'}>
             {song.subtitle}
           </Link>

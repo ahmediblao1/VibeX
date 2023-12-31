@@ -5,7 +5,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
   const artist = artistData?.data[0]?.attributes;
   return (
     <div className="relative w-full flex flex-col">
-      <div className="w-full bg-gradient-to-l from-transparent to-black sm:h-48 h-28" />
+      <div className="w-full bg-gradient-to-tr from-[#FCB404] to-[#043B1D] opacity-40 sm:h-48 h-28" />
 
       <div className="absolute inset-0 flex gap-5 items-center">
         <img
