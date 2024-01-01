@@ -1,12 +1,24 @@
-import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+/* eslint-disable no-unused-vars */
+import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
 import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, TopCharts } from './pages';
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [redirected, setRedirected] = useState(false);
 
+  useEffect(() => {
+    // Redirect to the Top Charts page only if not redirected before
+    if (!redirected) {
+      navigate('/top-charts');
+      setRedirected(true);
+    }
+  }, [navigate, redirected]);
   return (
     <div className="relative flex">
       <Sidebar />
