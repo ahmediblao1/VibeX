@@ -14,7 +14,7 @@ const Search = () => {
 
   return (
     <div className="felx flex-col">
-      <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">
+      <h3 className="font-bold text-3xl text-white text-left mt-4 mb-10">
         Showing result for <span className="font-black">{searchTerm}</span>
       </h2>
 
