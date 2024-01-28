@@ -1,6 +1,6 @@
 # Project VibeX
 
-an elegant React.js Music Application. 
+an elegant React.js Music Player Application. 
 
 # Contributing
 
